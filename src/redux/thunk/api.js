@@ -1,15 +1,23 @@
-/* eslint-disable operator-linebreak */
+/* eslint-disable function-paren-newline */
+/* eslint-disable implicit-arrow-linebreak */
 import axios from 'axios';
-import { fetchReport } from '../actions/action';
+import _ from 'lodash';
+import { fetchContinent, fetchContinentFailure } from '../actions/action';
 
-const URL =
-  'https://api.covid19tracking.narrativa.com/api/countries?date_from=2021-03-20&date_to=2021-12-01';
+const baseURL = 'https://covid-api.mmediagroup.fr/v1/vaccines?continent=africa';
 
-const fetchCovid = () => (dispatch) => {
-  axios.get(URL).then((res) => {
-    const report = res.data;
-    dispatch(fetchReport(report));
-  });
+const fetchVacinated = () => (dispatch) => {
+  axios
+    .get(baseURL)
+    .then((res) => {
+      const reports = res.data;
+      const continent = [];
+      _.forEach(reports, (report) => continent.push(report));
+      dispatch(fetchContinent(continent));
+    })
+    .catch((err) => {
+      dispatch(fetchContinentFailure(err.message));
+    });
 };
 
-export default fetchCovid;
+export default fetchVacinated;

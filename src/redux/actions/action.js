@@ -1,15 +1,14 @@
 /* eslint-disable operator-linebreak */
-export const FETCH_COVID_REPORT =
-  'react-capstone-project/action/FETCH_COVID_REPORT';
-export const FETCH_COVID_FAILURE =
-  'react-capstone-project/action/FETCH_COVID_FAILURE';
+export const FETCH_CONTINENT = 'react-capstone-project/action/FETCH_CONTINENT';
+export const FETCH_CONTINENT_FAILURE =
+  'react-capstone-project/action/FETCH_CONTINENT_FAILURE';
 
-export const fetchReport = (payload) => ({
-  type: FETCH_COVID_REPORT,
+export const fetchContinent = (payload) => ({
+  type: FETCH_CONTINENT,
   payload,
 });
 
-export const fetchReportFailure = (error) => ({
-  type: FETCH_COVID_FAILURE,
+export const fetchContinentFailure = (error) => ({
+  type: FETCH_CONTINENT_FAILURE,
   payload: error,
 });

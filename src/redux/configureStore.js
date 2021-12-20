@@ -2,10 +2,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
-import covidReducer from './reducers/covid';
+import vacineReducer from './reducers/covid';
 
 const reducer = combineReducers({
-  report: covidReducer,
+  report: vacineReducer,
 });
 
 const store = createStore(reducer, applyMiddleware(logger, thunk));
