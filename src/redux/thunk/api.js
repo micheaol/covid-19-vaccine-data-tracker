@@ -28,8 +28,6 @@ export const fetchCountry = (countryId) => (dispatch) => {
   axios
     .get(`https://covid-api.mmediagroup.fr/v1/vaccines?country=${countryId}`)
     .then((res) => {
-      // console.log(res);
       dispatch(fetchCountryDetails(countryId));
-      console.log('from get country', countryId);
     });
 };
