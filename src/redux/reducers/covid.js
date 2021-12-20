@@ -1,4 +1,12 @@
-import { FETCH_CONTINENT, FETCH_CONTINENT_FAILURE } from '../actions/action';
+/* eslint-disable quotes */
+/* eslint-disable comma-dangle */
+/* eslint-disable no-case-declarations */
+import _ from 'lodash';
+import {
+  FETCH_CONTINENT,
+  FETCH_CONTINENT_FAILURE,
+  FETCH_COUNTRY,
+} from '../actions/action';
 
 const initialState = [];
 
@@ -8,6 +16,13 @@ const vacineReducer = (state = initialState, { type, payload }) => {
       return payload;
     case FETCH_CONTINENT_FAILURE:
       return state;
+    case FETCH_COUNTRY:
+      const newState = _.filter(
+        state,
+        (vaccine) => vaccine.All.country === payload
+      );
+      console.log('from reducer', newState);
+      return newState;
     default:
       return state;
   }

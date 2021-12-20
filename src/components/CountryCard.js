@@ -1,17 +1,17 @@
+/* eslint-disable quotes */
+/* eslint-disable react/jsx-curly-brace-presence */
 /* eslint-disable jsx-quotes */
 /* eslint-disable arrow-body-style */
+import { Link } from 'react-router-dom';
 import React from 'react';
 
-const CountryCard = ({ vaccine }) => {
-  const getCountry = () => {
-    console.log(vaccine.All.country);
-  };
+const CountryCard = ({ vaccine, getCountry }) => {
   return (
-    <div>
+    <div data-id={vaccine.All.country}>
       <h1>Hello from card</h1>
-      <button onClick={getCountry} type='submit'>
+      <Link to={`/${vaccine.All.country}`} onClick={getCountry} type='submit'>
         Click me
-      </button>
+      </Link>
     </div>
   );
 };

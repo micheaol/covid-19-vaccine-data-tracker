@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import vacineReducer from './reducers/covid';
 
 const reducer = combineReducers({
-  report: vacineReducer,
+  vaccine: vacineReducer,
 });
 
 const store = createStore(reducer, applyMiddleware(logger, thunk));

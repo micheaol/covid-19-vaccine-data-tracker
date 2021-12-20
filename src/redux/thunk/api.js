@@ -2,11 +2,15 @@
 /* eslint-disable implicit-arrow-linebreak */
 import axios from 'axios';
 import _ from 'lodash';
-import { fetchContinent, fetchContinentFailure } from '../actions/action';
+import {
+  fetchContinent,
+  fetchContinentFailure,
+  fetchCountryDetails,
+} from '../actions/action';
 
 const baseURL = 'https://covid-api.mmediagroup.fr/v1/vaccines?continent=africa';
 
-const fetchVacinated = () => (dispatch) => {
+export const fetchVacinated = () => (dispatch) => {
   axios
     .get(baseURL)
     .then((res) => {
@@ -20,4 +24,12 @@ const fetchVacinated = () => (dispatch) => {
     });
 };
 
-export default fetchVacinated;
+export const fetchCountry = (countryId) => (dispatch) => {
+  axios
+    .get(`https://covid-api.mmediagroup.fr/v1/vaccines?country=${countryId}`)
+    .then((res) => {
+      // console.log(res);
+      dispatch(fetchCountryDetails(countryId));
+      console.log('from get country', countryId);
+    });
+};
