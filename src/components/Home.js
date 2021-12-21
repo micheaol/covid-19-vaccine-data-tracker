@@ -3,14 +3,15 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchVacinated, fetchCountry } from '../redux/thunk/api';
 import CountryCard from './CountryCard';
+import '../App.css';
 
 const Home = () => {
   const dispatch = useDispatch();
   const reports = useSelector((state) => state.vaccine);
-  console.log('Hello from home', reports);
 
   const getCountry = (e) => {
-    const vaccinated = e.target.parentNode;
+    const vaccinated = e.target.parentNode.parentNode.parentNode;
+    console.log('Hello from home', vaccinated);
     const vaccineId = vaccinated.getAttribute('data-id');
     dispatch(fetchCountry(vaccineId));
   };
@@ -18,7 +19,7 @@ const Home = () => {
     dispatch(fetchVacinated());
   }, []);
   return (
-    <div>
+    <div className="home-wrapper row">
       {reports &&
         reports.map((vaccine) => (
           <CountryCard
