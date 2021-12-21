@@ -5,14 +5,13 @@ import { fetchCountryDetails } from '../redux/actions/action';
 const CountryDetail = () => {
   const dispatch = useDispatch();
   const country = useSelector((state) => state.vaccine[0].All);
-  console.log('from detail page', country);
 
   useEffect(() => {
     if (country.length === 0) dispatch(fetchCountryDetails());
   }, []);
   return (
     <div>
-      <h1>{country.country}</h1>
+      <h1>{`People vaccinated: ${country.people_vaccinated}`}</h1>
     </div>
   );
 };

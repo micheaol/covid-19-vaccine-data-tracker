@@ -8,7 +8,7 @@ import React from 'react';
 const CountryCard = ({ vaccine, getCountry }) => {
   return (
     <div data-id={vaccine.All.country}>
-      <h1>Hello from card</h1>
+      <h1>{`Country name: ${vaccine.All.country}`}</h1>
       <Link to={`/${vaccine.All.country}`} onClick={getCountry} type='submit'>
         Click me
       </Link>
