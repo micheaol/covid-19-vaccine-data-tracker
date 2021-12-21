@@ -1,14 +1,15 @@
 .home-wrapper {
-  max-width: 95%;
-  text-align: center;
-  margin-left: 2%;
+  width: 100%;
+  text-align:end;
+  display: grid;
+  grid-template-columns: repeat(2,50%);
 }
 
 .card-wrapper {
-  padding: 10px;
+  display: inline-grid;
 }
 
 .inner-wrapper {
-  padding: 25px;
+  padding: 15px;
   height: 100%;
 }

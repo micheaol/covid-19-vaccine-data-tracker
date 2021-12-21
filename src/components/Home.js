@@ -11,7 +11,7 @@ const Home = () => {
 
   const getCountry = (e) => {
     const vaccinated = e.target.parentNode.parentNode.parentNode;
-    console.log('Hello from home', vaccinated);
+
     const vaccineId = vaccinated.getAttribute('data-id');
     dispatch(fetchCountry(vaccineId));
   };
@@ -19,7 +19,7 @@ const Home = () => {
     dispatch(fetchVacinated());
   }, []);
   return (
-    <div className="home-wrapper row">
+    <div className="home-wrapper row g-0">
       {reports &&
         reports.map((vaccine) => (
           <CountryCard
