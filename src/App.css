@@ -15,7 +15,7 @@
 }
 
 .hero-wrapper {
-  background-color: #4464b3;
+  background-color: #446cbc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,4 +34,20 @@
 
 .header-wrapper {
   width: 50%;
+}
+
+nav {
+  background-color: #4464b3;
+  padding: 20px;
+}
+
+.icons-wrapper {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+}
+
+.icon-one {
+  margin-right: 10px;
 }

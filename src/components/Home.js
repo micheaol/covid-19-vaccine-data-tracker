@@ -1,3 +1,6 @@
+/* eslint-disable guard-for-in */
+/* eslint-disable space-before-blocks */
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable operator-linebreak */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,6 +12,14 @@ import '../App.css';
 const Home = () => {
   const dispatch = useDispatch();
   const reports = useSelector((state) => state.vaccine);
+  const peopleVaccinated = [];
+  let totalVaccinated = 0;
+  reports.map((total) => peopleVaccinated.push(total.All.people_vaccinated));
+  for (let i = 0; i < peopleVaccinated.length; i += 1){
+    totalVaccinated += peopleVaccinated[i];
+  }
+
+  console.log('Total vacinated', totalVaccinated);
 
   const getCountry = (e) => {
     const vaccinated = e.target.parentNode.parentNode.parentNode;
@@ -26,7 +37,8 @@ const Home = () => {
           <img src={africa} alt="map of africa" />
         </div>
         <div className="header-wrapper">
-          <h1>Hello Africa</h1>
+          <h1>Africa</h1>
+          <h3>{` ${totalVaccinated} Vaccinated`}</h3>
         </div>
       </div>
       <div className="home-wrapper row g-0">
