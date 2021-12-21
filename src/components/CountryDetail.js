@@ -4,7 +4,7 @@ import { fetchCountryDetails } from '../redux/actions/action';
 
 const CountryDetail = () => {
   const dispatch = useDispatch();
-  const country = useSelector((state) => state.vaccine);
+  const country = useSelector((state) => state.vaccine[0].All);
   console.log('from detail page', country);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const CountryDetail = () => {
   }, []);
   return (
     <div>
-      <h1>hi</h1>
+      <h1>{country.country}</h1>
     </div>
   );
 };
