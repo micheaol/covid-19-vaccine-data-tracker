@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 const CountryDetail = () => {
   const dispatch = useDispatch();
   const country = useSelector((state) => state.vaccine[0].All);
+  console.log('From detail page', country);
   useEffect(() => {
     if (country.length === 0) dispatch(fetchCountryDetails());
   }, []);
@@ -18,6 +19,30 @@ const CountryDetail = () => {
       </div>
       <div className="d-flex align-items-center justify-content-around filter sorted-bar">
         <p>COUNTRY BREAKDOWN</p>
+      </div>
+      <div className="container p-0">
+        <ul className="list-group list-group-horizontal-sm">
+          <li className="list-group-item d-flex d-flex justify-content-between py-3">
+            Population:
+            <span>{country.population.toLocaleString()}</span>
+          </li>
+          <li className="list-group-item d-flex d-flex justify-content-between py-3">
+            Administered:
+            <span>{country.administered.toLocaleString()}</span>
+          </li>
+          <li className="list-group-item d-flex d-flex justify-content-between py-3">
+            Partially vaccinated:
+            <span>{country.people_partially_vaccinated.toLocaleString()}</span>
+          </li>
+          <li className="list-group-item d-flex d-flex justify-content-between py-3">
+            People vaccinated:
+            <span>{country.people_partially_vaccinated.toLocaleString()}</span>
+          </li>
+          <li className="list-group-item d-flex d-flex justify-content-between py-3">
+            Life expectancy:
+            <span>{country.life_expectancy}</span>
+          </li>
+        </ul>
       </div>
     </div>
   );
