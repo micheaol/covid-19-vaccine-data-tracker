@@ -13,3 +13,25 @@
   padding: 15px;
   height: 100%;
 }
+
+.hero-wrapper {
+  background-color: #4464b3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 35%;
+  padding: 25px;
+}
+
+.hero-img-display {
+  width: 50%;
+}
+
+.hero-img-display img{
+  width: 100%;
+}
+
+.header-wrapper {
+  width: 50%;
+}

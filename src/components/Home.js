@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchVacinated, fetchCountry } from '../redux/thunk/api';
 import CountryCard from './CountryCard';
+import africa from '../images/africa.svg';
 import '../App.css';
 
 const Home = () => {
@@ -19,15 +20,25 @@ const Home = () => {
     dispatch(fetchVacinated());
   }, []);
   return (
-    <div className="home-wrapper row g-0">
-      {reports &&
-        reports.map((vaccine) => (
-          <CountryCard
-            vaccine={vaccine}
-            key={vaccine.All.country}
-            getCountry={getCountry}
-          />
-        ))}
+    <div>
+      <div className="hero-wrapper">
+        <div className="hero-img-display">
+          <img src={africa} alt="map of africa" />
+        </div>
+        <div className="header-wrapper">
+          <h1>Hello Africa</h1>
+        </div>
+      </div>
+      <div className="home-wrapper row g-0">
+        {reports &&
+          reports.map((vaccine) => (
+            <CountryCard
+              vaccine={vaccine}
+              key={vaccine.All.country}
+              getCountry={getCountry}
+            />
+          ))}
+      </div>
     </div>
   );
 };
