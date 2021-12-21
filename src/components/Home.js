@@ -8,6 +8,7 @@ import { fetchVacinated, fetchCountry } from '../redux/thunk/api';
 import CountryCard from './CountryCard';
 import africa from '../images/africa.svg';
 import '../App.css';
+import Navbar from './Navbar';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -18,8 +19,6 @@ const Home = () => {
   for (let i = 0; i < peopleVaccinated.length; i += 1){
     totalVaccinated += peopleVaccinated[i];
   }
-
-  console.log('Total vacinated', totalVaccinated);
 
   const getCountry = (e) => {
     const vaccinated = e.target.parentNode.parentNode.parentNode;
@@ -32,14 +31,18 @@ const Home = () => {
   }, []);
   return (
     <div>
+      <Navbar title="Africa" />
       <div className="hero-wrapper">
         <div className="hero-img-display">
           <img src={africa} alt="map of africa" />
         </div>
         <div className="header-wrapper">
           <h1>Africa</h1>
-          <h3>{` ${totalVaccinated} Vaccinated`}</h3>
+          <h3>{` ${totalVaccinated.toLocaleString()} Vaccinated`}</h3>
         </div>
+      </div>
+      <div className="sorted-bar">
+        <h1>SORTED BY COUNTRY</h1>
       </div>
       <div className="home-wrapper row g-0">
         {reports &&

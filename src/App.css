@@ -10,8 +10,15 @@
 }
 
 .inner-wrapper {
+  background-image: url('../src/images/africa.svg');
+  background-repeat: no-repeat;
+  background-size: 95px;
+  background-position: 10% 20%;
   padding: 15px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: azure;
 }
 
 .hero-wrapper {
@@ -42,12 +49,49 @@ nav {
 }
 
 .icons-wrapper {
-  margin: 5px;
   display: flex;
   align-items: center;
   justify-content:space-evenly;
 }
 
+.year-wrapper {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  color: aliceblue;
+  font-weight: bold;
+}
+
 .icon-one {
   margin-right: 10px;
+}
+
+.card {
+  background-color: azure;
+}
+
+.card:nth-child(even) {
+  background-color: #4464b3;
+}
+
+.title-wrapper {
+  font-size: 5px;
+}
+
+.sorted-bar {
+  background-color: #4464b3;
+  margin:0;
+  padding: 10px;
+}
+.sorted-bar h1 {
+  margin: 0;
+}
+
+.vaccine-img-wrapper img {
+  width: 15%;
+}
+
+.detail-img img {
+  width: 100%;
 }
