@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <div data-testid="home">
       <Navbar title="Africa" />
-      <div className="hero-wrapper">
+      <div className="hero-wrapper container-fluid">
         <div className="hero-img-display">
           <img src={africa} alt="map of africa" />
         </div>
