@@ -103,31 +103,16 @@ exports[`render component to the DOM matches the snapshot 1`] = `
     <h1>
       SORTED BY COUNTRY
     </h1>
-    <select
-      aria-label=".form-select-sm"
-      className="form-select form-select-sm"
+    <div
+      className="input-holder"
     >
-      <option
-        defaultValue="Search"
-      >
-        Search
-      </option>
-      <option
-        value="1"
-      >
-        One
-      </option>
-      <option
-        value="2"
-      >
-        Two
-      </option>
-      <option
-        value="3"
-      >
-        Three
-      </option>
-    </select>
+      <input
+        name="search-input"
+        onChange={[Function]}
+        placeholder="Search country name"
+        type="text"
+      />
+    </div>
   </div>
   <div
     className="home-wrapper row g-0"

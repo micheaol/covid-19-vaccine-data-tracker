@@ -1,5 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable react/jsx-key */
 /* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -49,7 +47,7 @@ const Home = () => {
       <div className="sorted-bar">
         <h1>SORTED BY COUNTRY</h1>
         <div className="input-holder">
-          <input type="text" placeholder="Search country name" onChange={filterCountryByName} />
+          <input type="text" placeholder="Search country name" name="search-input" onChange={filterCountryByName} />
         </div>
       </div>
       <div className="home-wrapper row g-0">
