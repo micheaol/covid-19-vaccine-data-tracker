@@ -12,7 +12,7 @@ const CountryDetail = () => {
     if (country.length === 0) dispatch(fetchCountryDetails());
   }, []);
   return (
-    <div>
+    <div data-testid="detail-page">
       <Navbar title={country.country} />
       <div className="d-flex align-items-center justify-content-evenlymain-card detail-img">
         <img src={covid} alt="covid virus" />
@@ -36,7 +36,7 @@ const CountryDetail = () => {
           </li>
           <li className="list-group-item d-flex d-flex justify-content-between py-3">
             People vaccinated:
-            <span>{country.people_partially_vaccinated.toLocaleString()}</span>
+            <span>{country.people_vaccinated.toLocaleString()}</span>
           </li>
           <li className="list-group-item d-flex d-flex justify-content-between py-3">
             Life expectancy:

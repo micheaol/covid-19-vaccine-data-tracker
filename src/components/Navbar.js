@@ -11,7 +11,7 @@ const Navbar = ({ title }) => {
   if (title === 'Africa') {
     return (
       <>
-        <nav className="nav d-flex justify-content-between px-2">
+        <nav className="nav d-flex justify-content-between px-2" data-testid="navbar">
           <div className="year-wrapper">
             {currentYear}
           </div>

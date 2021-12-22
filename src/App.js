@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div data-testid="app-component">
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exac path="/detail/:countryId" element={<CountryDetail />} />

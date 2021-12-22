@@ -1,12 +1,17 @@
-import React, { useEffect } from 'react';
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/jsx-key */
+/* eslint-disable max-len */
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchVacinated, fetchCountry } from '../redux/thunk/api';
+import { fetchVacinated, fetchCountry, sortCountry } from '../redux/thunk/api';
 import CountryCard from './CountryCard';
 import africa from '../images/africa.svg';
 import '../App.css';
 import Navbar from './Navbar';
+import { filterCountry } from '../redux/actions/action';
 
 const Home = () => {
+  const [searchCountry, setSearchCountry] = useState('');
   const dispatch = useDispatch();
   const reports = useSelector((state) => state.vaccine);
   const peopleVaccinated = [];
@@ -18,15 +23,20 @@ const Home = () => {
 
   const getCountry = (e) => {
     const vaccinated = e.target.parentNode.parentNode.parentNode;
-
     const vaccineId = vaccinated.getAttribute('data-id');
     dispatch(fetchCountry(vaccineId));
   };
+
+  const filterCountryByName = (e) => {
+    const countryId = e.target.value;
+    setSearchCountry(countryId);
+  };
+
   useEffect(() => {
     dispatch(fetchVacinated());
   }, []);
   return (
-    <div>
+    <div data-testid="home">
       <Navbar title="Africa" />
       <div className="hero-wrapper">
         <div className="hero-img-display">
@@ -39,16 +49,13 @@ const Home = () => {
       </div>
       <div className="sorted-bar">
         <h1>SORTED BY COUNTRY</h1>
-        <select className="form-select form-select-sm" aria-label=".form-select-sm">
-          <option selected>Search</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
+        <div className="input-holder">
+          <input type="text" placeholder="Search country name" onChange={filterCountryByName} />
+        </div>
       </div>
       <div className="home-wrapper row g-0">
         {reports
-        && reports.map((vaccine) => (
+        && reports.filter((item) => item.All.country.includes(searchCountry)).map((vaccine) => (
           <CountryCard
             vaccine={vaccine}
             key={vaccine.All.country}

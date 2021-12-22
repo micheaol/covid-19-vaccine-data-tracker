@@ -6,6 +6,7 @@ import {
   fetchContinent,
   fetchContinentFailure,
   fetchCountryDetails,
+  filterCountry,
 } from '../actions/action';
 
 const baseURL = 'https://covid-api.mmediagroup.fr/v1/vaccines?continent=africa';
@@ -29,5 +30,14 @@ export const fetchCountry = (countryId) => (dispatch) => {
     .get(`https://covid-api.mmediagroup.fr/v1/vaccines?country=${countryId}`)
     .then((res) => {
       dispatch(fetchCountryDetails(countryId));
+    });
+};
+
+export const sortCountry = (countryId) => (dispatch) => {
+  axios
+    .get(`https://covid-api.mmediagroup.fr/v1/vaccines?country=${countryId}`)
+    .then((res) => {
+      console.log('From sort', res.data);
+      dispatch(filterCountry(res.data));
     });
 };

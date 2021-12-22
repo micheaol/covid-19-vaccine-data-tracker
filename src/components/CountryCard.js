@@ -7,7 +7,7 @@ import '../App.css';
 
 const CountryCard = ({ vaccine, getCountry }) => (
   <>
-    <div className="card inner-wrapper" data-id={vaccine.All.country}>
+    <div className="card inner-wrapper" data-id={vaccine.All.country} data-testid="card">
       <Link to={`/detail/${vaccine.All.country}`} onClick={getCountry} type="submit">
         <BsArrowRightCircleFill color="white" />
       </Link>

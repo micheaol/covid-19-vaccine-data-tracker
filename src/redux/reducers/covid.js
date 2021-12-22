@@ -4,6 +4,7 @@ import {
   FETCH_CONTINENT,
   FETCH_CONTINENT_FAILURE,
   FETCH_COUNTRY,
+  FILTER_COUNTRY,
 } from '../actions/action';
 
 const initialState = [];
@@ -20,6 +21,12 @@ const vacineReducer = (state = initialState, { type, payload }) => {
         (vaccine) => vaccine.All.country === payload,
       );
       return newState;
+    case FILTER_COUNTRY:
+      const filterCountry = _.filter(
+        state,
+        (vaccine) => vaccine.All.country === payload,
+      );
+      return filterCountry;
     default:
       return state;
   }
