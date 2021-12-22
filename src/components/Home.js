@@ -3,12 +3,11 @@
 /* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchVacinated, fetchCountry, sortCountry } from '../redux/thunk/api';
+import { fetchVacinated, fetchCountry } from '../redux/thunk/api';
 import CountryCard from './CountryCard';
 import africa from '../images/africa.svg';
 import '../App.css';
 import Navbar from './Navbar';
-import { filterCountry } from '../redux/actions/action';
 
 const Home = () => {
   const [searchCountry, setSearchCountry] = useState('');
@@ -55,7 +54,7 @@ const Home = () => {
       </div>
       <div className="home-wrapper row g-0">
         {reports
-        && reports.filter((item) => item.All.country.includes(searchCountry)).map((vaccine) => (
+        && reports.filter((item) => item.All.country.toLowerCase().includes(searchCountry.toLowerCase())).map((vaccine) => (
           <CountryCard
             vaccine={vaccine}
             key={vaccine.All.country}

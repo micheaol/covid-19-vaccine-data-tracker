@@ -1,12 +1,9 @@
-/* eslint-disable function-paren-newline */
-/* eslint-disable implicit-arrow-linebreak */
 import axios from 'axios';
 import _ from 'lodash';
 import {
   fetchContinent,
   fetchContinentFailure,
   fetchCountryDetails,
-  filterCountry,
 } from '../actions/action';
 
 const baseURL = 'https://covid-api.mmediagroup.fr/v1/vaccines?continent=africa';
@@ -28,16 +25,7 @@ export const fetchVacinated = () => (dispatch) => {
 export const fetchCountry = (countryId) => (dispatch) => {
   axios
     .get(`https://covid-api.mmediagroup.fr/v1/vaccines?country=${countryId}`)
-    .then((res) => {
+    .then(() => {
       dispatch(fetchCountryDetails(countryId));
-    });
-};
-
-export const sortCountry = (countryId) => (dispatch) => {
-  axios
-    .get(`https://covid-api.mmediagroup.fr/v1/vaccines?country=${countryId}`)
-    .then((res) => {
-      console.log('From sort', res.data);
-      dispatch(filterCountry(res.data));
     });
 };

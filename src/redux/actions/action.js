@@ -3,12 +3,6 @@ export const FETCH_CONTINENT_FAILURE = 'react-capstone-project/action/FETCH_CONT
 
 export const FETCH_COUNTRY = 'react-capstone-project/action/FETCH_COUNTRY';
 export const FETCH_COUNTRY_FAILURE = 'react-capstone-project/action/FETCH_COUNTRY_FAILURE';
-export const FILTER_COUNTRY = 'react-capstone-project/action/FILTER_COUNTRY';
-
-export const filterCountry = (payload) => ({
-  type: FILTER_COUNTRY,
-  payload,
-});
 
 export const fetchContinent = (payload) => ({
   type: FETCH_CONTINENT,
