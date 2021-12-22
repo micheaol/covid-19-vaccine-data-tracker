@@ -97,6 +97,7 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+
 .sorted-bar h1 {
   margin: 0;
   font-size: 20px;
@@ -117,6 +118,7 @@ nav {
 .list-detail li:nth-child(even) {
   background-color: #4464b3;
 }
+
 .list-detail li:nth-child(odd) {
   background-color: #446cbc;
 }
