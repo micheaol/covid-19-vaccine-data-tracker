@@ -73,7 +73,7 @@ nav {
 }
 
 .card {
-  background-color: azure;
+  background-color: #446cbc;
 }
 
 .card:nth-child(4n - 2) {
@@ -82,10 +82,6 @@ nav {
 
 .card:nth-child(4n - 1) {
   background-color: #4464b3;
-}
-
-.card {
-  background-color: #446cbc;
 }
 
 .title-wrapper {
