@@ -20,8 +20,8 @@ const CountryDetail = () => {
       <div className="d-flex align-items-center justify-content-around filter sorted-bar">
         <p>COUNTRY BREAKDOWN</p>
       </div>
-      <div className="container p-0 list-wrapper">
-        <ul className="list-group list-group-horizontal-sm list-detail">
+      <div className="container-fluid p-0 list-wrapper">
+        <ul className="list-group list-group-vartical-sm list-detail">
           <li className="list-group-item d-flex d-flex justify-content-between py-3">
             Population:
             <span>{country.population.toLocaleString()}</span>

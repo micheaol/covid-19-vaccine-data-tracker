@@ -76,15 +76,12 @@ nav {
   background-color: azure;
 }
 
-.card:nth-child(3n -2) {
+.card:nth-child(4n - 2) {
   background-color: #4464b3;
 }
 
-.card:nth-child(3n) {
+.card:nth-child(4n - 1) {
   background-color: #4464b3;
-}
-.card:nth-child(5n) {
-  background-color: #446cbc;
 }
 
 .card {
@@ -100,9 +97,17 @@ nav {
   margin: 0;
   padding: 10px;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .sorted-bar h1 {
   margin: 0;
+  font-size: 20px;
+}
+
+.form-select {
+  width: 30%;
 }
 
 .vaccine-img-wrapper img {

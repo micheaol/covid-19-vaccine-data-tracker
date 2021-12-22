@@ -39,6 +39,12 @@ const Home = () => {
       </div>
       <div className="sorted-bar">
         <h1>SORTED BY COUNTRY</h1>
+        <select className="form-select form-select-sm" aria-label=".form-select-sm">
+          <option selected>Search</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
       </div>
       <div className="home-wrapper row g-0">
         {reports
