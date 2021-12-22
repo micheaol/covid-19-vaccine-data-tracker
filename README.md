@@ -22,7 +22,7 @@ In this Milestone, we work with the real live data from the MMediaGroup API. My 
 
 ## Set up locally
 
-- Open your terminal and run the following command: <code>git clone https://github.com/micheaol/react-capstone-project</code>
+- Open your terminal and run the following command: <code>git clone https://github.com/micheaol/covid-19-vaccine-data-tracker</code>
 - Run the command <code>npm install</code>
 - Run the command <code>npm start</code>
 
