@@ -1,5 +1,3 @@
-/* eslint-disable quotes */
-/* eslint-disable comma-dangle */
 /* eslint-disable no-case-declarations */
 import _ from 'lodash';
 import {
@@ -19,9 +17,8 @@ const vacineReducer = (state = initialState, { type, payload }) => {
     case FETCH_COUNTRY:
       const newState = _.filter(
         state,
-        (vaccine) => vaccine.All.country === payload
+        (vaccine) => vaccine.All.country === payload,
       );
-      console.log('from reducer', newState);
       return newState;
     default:
       return state;

@@ -1,12 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FaMicrophone, FaAngleLeft } from 'react-icons/fa';
 import { MdSettings } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
 const Navbar = ({ title }) => {
-  console.log('Hello from Nav', title);
-
   const year = new Date();
   const currentYear = year.getUTCFullYear();
   if (title === 'Africa') {
@@ -47,6 +46,10 @@ const Navbar = ({ title }) => {
       </nav>
     </>
   );
+};
+
+Navbar.propTypes = {
+  title: PropTypes.node.isRequired,
 };
 
 export default Navbar;

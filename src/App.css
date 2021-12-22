@@ -1,8 +1,13 @@
+body {
+  background-color: #446cbc;
+  color: aliceblue;
+}
+
 .home-wrapper {
   width: 100%;
-  text-align:end;
+  text-align: end;
   display: grid;
-  grid-template-columns: repeat(2,50%);
+  grid-template-columns: repeat(2, 50%);
 }
 
 .card-wrapper {
@@ -35,7 +40,7 @@
   width: 50%;
 }
 
-.hero-img-display img{
+.hero-img-display img {
   width: 100%;
 }
 
@@ -51,14 +56,14 @@ nav {
 .icons-wrapper {
   display: flex;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
 }
 
 .year-wrapper {
   margin: 5px;
   display: flex;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   color: aliceblue;
   font-weight: bold;
 }
@@ -71,8 +76,19 @@ nav {
   background-color: azure;
 }
 
-.card:nth-child(even) {
+.card:nth-child(3n -2) {
   background-color: #4464b3;
+}
+
+.card:nth-child(3n) {
+  background-color: #4464b3;
+}
+.card:nth-child(5n) {
+  background-color: #446cbc;
+}
+
+.card {
+  background-color: #446cbc;
 }
 
 .title-wrapper {
@@ -81,8 +97,9 @@ nav {
 
 .sorted-bar {
   background-color: #4464b3;
-  margin:0;
+  margin: 0;
   padding: 10px;
+  font-weight: bold;
 }
 .sorted-bar h1 {
   margin: 0;
@@ -94,4 +111,20 @@ nav {
 
 .detail-img img {
   width: 100%;
+}
+
+.list-detail {
+  background-color: #4464b3;
+}
+
+.list-detail li:nth-child(even) {
+  background-color: #4464b3;
+}
+.list-detail li:nth-child(odd) {
+  background-color: #446cbc;
+}
+
+.list-group-item {
+  color: aliceblue;
+  font-weight: bold;
 }

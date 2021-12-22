@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountryDetails } from '../redux/actions/action';
 import covid from '../images/covid.svg';
 import Navbar from './Navbar';
+import '../App.css';
 
 const CountryDetail = () => {
   const dispatch = useDispatch();
   const country = useSelector((state) => state.vaccine[0].All);
-  console.log('From detail page', country);
   useEffect(() => {
     if (country.length === 0) dispatch(fetchCountryDetails());
   }, []);
@@ -20,8 +20,8 @@ const CountryDetail = () => {
       <div className="d-flex align-items-center justify-content-around filter sorted-bar">
         <p>COUNTRY BREAKDOWN</p>
       </div>
-      <div className="container p-0">
-        <ul className="list-group list-group-horizontal-sm">
+      <div className="container p-0 list-wrapper">
+        <ul className="list-group list-group-horizontal-sm list-detail">
           <li className="list-group-item d-flex d-flex justify-content-between py-3">
             Population:
             <span>{country.population.toLocaleString()}</span>

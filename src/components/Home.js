@@ -1,7 +1,3 @@
-/* eslint-disable guard-for-in */
-/* eslint-disable space-before-blocks */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable operator-linebreak */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchVacinated, fetchCountry } from '../redux/thunk/api';
@@ -16,7 +12,7 @@ const Home = () => {
   const peopleVaccinated = [];
   let totalVaccinated = 0;
   reports.map((total) => peopleVaccinated.push(total.All.people_vaccinated));
-  for (let i = 0; i < peopleVaccinated.length; i += 1){
+  for (let i = 0; i < peopleVaccinated.length; i += 1) {
     totalVaccinated += peopleVaccinated[i];
   }
 
@@ -45,14 +41,14 @@ const Home = () => {
         <h1>SORTED BY COUNTRY</h1>
       </div>
       <div className="home-wrapper row g-0">
-        {reports &&
-          reports.map((vaccine) => (
-            <CountryCard
-              vaccine={vaccine}
-              key={vaccine.All.country}
-              getCountry={getCountry}
-            />
-          ))}
+        {reports
+        && reports.map((vaccine) => (
+          <CountryCard
+            vaccine={vaccine}
+            key={vaccine.All.country}
+            getCountry={getCountry}
+          />
+        ))}
       </div>
     </div>
   );
