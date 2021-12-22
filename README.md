@@ -20,7 +20,9 @@ In this Milestone, we work with the real live data from the MMediaGroup API. My 
 - Visual Studio Code
 - Linters
 
-## Set up locally
+## Live Demo
+
+[Live Demo Link](https://covid-19-vaccine-tracker.netlify.app/)
 
 - Open your terminal and run the following command: <code>git clone https://github.com/micheaol/covid-19-vaccine-data-tracker</code>
 - Run the command <code>npm install</code>
@@ -40,7 +42,7 @@ Once you completed this steps you should see the app running at: http://localhos
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/micheaol/react-capstone-project/issues)
+Feel free to check the [issues page](https://github.com/micheaol/covid-19-vaccine-data-tracker/issues)
 
 ## Show your support
 
