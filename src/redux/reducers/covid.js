@@ -16,8 +16,7 @@ const vacineReducer = (state = initialState, { type, payload }) => {
       return state;
     case FETCH_COUNTRY:
       const newState = _.filter(
-        state,
-        (vaccine) => vaccine.All.country === payload,
+        state, (vaccine) => vaccine.All.country === payload,
       );
       return newState;
     default:
