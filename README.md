@@ -22,7 +22,7 @@ In this Milestone, we work with the real live data from the MMediaGroup API. My 
 
 ## Live Demo
 
-[Live Demo Link](https://covid-19-vaccine-tracker.netlify.app/)
+[Live Demo Link](https://covid-19-vaccine-tracker-africa.netlify.app/)
 
 - Open your terminal and run the following command: <code>git clone https://github.com/micheaol/covid-19-vaccine-data-tracker</code>
 - Run the command <code>npm install</code>
